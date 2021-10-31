@@ -4,6 +4,21 @@
 <title>Nirala Estate offers</title>
 <link rel = "icon" href = "../images/logo.png"  type = "image/x-icon">
 <meta charset="UTF-8">
+
+     <meta name="description" content="Nirala Estate brings premium apartments in Tech Zone 4, Greater Noida West, Uttar Pradesh. Nirala Estate Phase 2,3 and 4 providing 2/3 BHK residential apartments at very affordable price ranges starting @ ₹ 42L ">
+     <meta name="keywords" content="nirala estate, nirala estate construction update, nirala estate price list, nirala estate noida extension, nirala estate possession date, nirala world, nirala estate complaints, nirala estate phase 1, nirala estate brochure, nirala estate phase 2, nirala estate floor plan, nirala estate reviews">
+     <meta name="author" content="https://nirala-estate.org/offers">
+	 <meta name="ROBOTS" content="INDEX, FOLLOW" />
+	 <meta name="rating" content="Safe For Kids" />
+     <meta name="googlebot" content="INDEX, FOLLOW" />
+     <meta name="YahooSeeker" content="INDEX, FOLLOW" />
+     <meta name="msnbot" content="INDEX, FOLLOW" />
+     <meta name="allow-search" content="yes" />
+     <meta name="distribution" content="global" />
+     <meta name="expires" content="never" />
+     <meta name="language" content="english" />
+     <meta name="page-topic" content="Nirala Estate Phase 2" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -24,11 +39,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 	      
 		
 	    $('#POPUPsendMessage').click(function(){
-		  
+		    
             var sPOPUPName=$('#POPUPName').val()
 			var sPOPUPMobile=$('#POPUPMobile').val()
 			var sPOPUPEmail='No Email. It was from POP UP'
-			$('.hover_bkgr_fricc').hide();
             $.ajax({
                 url: 'https://tgroz9ryhi.execute-api.ap-south-1.amazonaws.com/Prod/api/Leads',
                 method: 'POST',
@@ -39,13 +53,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 					date:''
                 },
                 success: function () {
-                      window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
+                      //window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
+					  document.location.href='/thanks'
                 },
                 error: function () {
-                      window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
+                      //window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
+					  document.location.href='/thanks'
                 }
-
+				
             });
+			
 	    });
 		
 		
