@@ -162,13 +162,13 @@ https://templatemo.com/tm-516-known
     padding: 100px 0;
   }
 
-  #team,
-  #testimonial {
+  #gallery,
+  #priceDetails {
     background: #f9f9f9;
   }
 
-  #team, 
-  #testimonial {
+  #gallery, 
+  #priceDetails {
     text-align: center;
   }
   
@@ -493,18 +493,18 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-      COURSES             
+      Floor Plans             
   -----------------------------------------*/
 
-  #courses .section-title {
+  #floorPlans .section-title {
     text-align: center;
   }
 
-  #courses .owl-theme .owl-nav {
+  #floorPlans .owl-theme .owl-nav {
     margin-top: 30px;
   }
 
-  #courses .owl-theme .owl-nav [class*=owl-] {
+  #floorPlans .owl-theme .owl-nav [class*=owl-] {
     border-radius: 2px;
     font-size: 16px;
     width: 30px;
@@ -763,23 +763,23 @@ img.hover-shadow {
 
 
   /*---------------------------------------
-      TESTIMONIAL             
+      price Details             
   -----------------------------------------*/
 
-  #testimonial .item {
+  #priceDetails .item {
     background: #ffffff;
     margin: 20px 0;
     padding: 4em 3em;
     text-align: left;
   }
 
-  #courses .col-md-4,
-  #testimonial .col-md-4 {
+  #floorPlans .col-md-4,
+  #priceDetails .col-md-4 {
     display: block;
     width: 100%;
   }
 
-  #testimonial .item > p {
+  #priceDetails .item > p {
     font-size: 16px;
     line-height: 26px;
   }
@@ -1172,7 +1172,7 @@ img.hover-shadow {
       font-size: 1.8em;
     }
 
-    #testimonial .item {
+    #priceDetails .item {
       padding: 2em;
     }
 
