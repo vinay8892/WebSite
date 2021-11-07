@@ -140,65 +140,36 @@
 					date:''
                 },
                 success: function () {
+				      $("#PriceLst1").removeAttr("style");
+		              $("#PriceLst2").removeAttr("style");
+					  localStorage.setItem("detailsSubmitted", "true");
                       window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
                 },
                 error: function () {
+				      $("#PriceLst1").removeAttr("style");
+		              $("#PriceLst2").removeAttr("style");
+					  localStorage.setItem("detailsSubmitted", "true");
                       window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
                 }
 
             });
 	    });
 		
-		window.onload = function() {
-			setTimeout(function() {
-			$('.hover_bkgr_fricc').show();
-		    }, 10000);
-        }
+		$('#btnViewPriceList').click(function(){
+		     /*
+		     $("#PriceLst1").removeAttr("style");
+		     $("#PriceLst2").removeAttr("style");
+			 document.location.href='/#priceDetails'
+			 */
+			 $('.hover_bkgr_fricc').show();
+		});
+		
+
 
 		  
 	 });
 	 </script>
-	 <!-- Added by Lalit on 03-10-2021 for image list-->
-	<script>
-		function openModal() {
-		  document.getElementById("MenuBar").style.display="none";
-		  document.getElementById("myModal").style.display = "block";
-		}
 
-		function closeModal() {
-		  document.getElementById("myModal").style.display = "none";
-		  document.getElementById("MenuBar").style.display = "block";
-		}
-
-		var slideIndex = 1;
-		showSlides(slideIndex);
-
-		function plusSlides(n) {
-		  showSlides(slideIndex += n);
-		}
-
-		function currentSlide(n) {
-		  showSlides(slideIndex = n);
-		}
-
-		function showSlides(n) {
-		  var i;
-		  var slides = document.getElementsByClassName("mySlides");
-		  var dots = document.getElementsByClassName("demo");
-		  var captionText = document.getElementById("caption");
-		  if (n > slides.length) {slideIndex = 1}
-		  if (n < 1) {slideIndex = slides.length}
-		  for (i = 0; i < slides.length; i++) {
-			  slides[i].style.display = "none";
-		  }
-		  for (i = 0; i < dots.length; i++) {
-			  dots[i].className = dots[i].className.replace(" active", "");
-		  }
-		  slides[slideIndex-1].style.display = "block";
-		  dots[slideIndex-1].className += " active";
-		  captionText.innerHTML = dots[slideIndex-1].alt;
-		}
-	</script>
 
 </head>
 <body id="home" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
@@ -876,46 +847,21 @@
 	<section id="priceDetails">
 		<div class="container">
 			<div class="row">
-
-				<div class="col-md-12 col-sm-12">
+                
+				<div class="col-md-12 col-sm-12 ">
 					<div class="section-title">
 						<h2>Price Details</h2>
+                    </div>
+					<div class="col-md-4 col-sm-12">
+							<a class="section-btn btn btn-default smoothScroll" name="btnViewPriceList" id="btnViewPriceList" style="background-color:blue;display:block;"  href="#">View Price List</a>
 					</div>
-
-					<div class="owl-carousel owl-theme owl-client">
-						<div class="col-md-4 col-sm-4">
-							<div class="item" style="background-color: white;border: 15px solid green;padding: 20px;margin: 20px">
-								<div class="tst-image">
-									<img src="images/2bhk-995-Sq.ft.jpg"  class="img-responsive" loading="lazy" alt="" />
-								</div>
-								<div class="tst-author">
-									<h4>2 BHK</h4>
-								</div>
-								<p>42 Lacks onwards. But better we can have a call or whats up at 9555101838 Number to get offers and discount   </p>
-							</div>
-						</div>
-
-						<div class="col-md-4 col-sm-4">
-							<div class="item" style="background-color: white;border: 15px solid green;padding: 20px;margin: 20px">
-								<div class="tst-image">
-									<img src="images/3bhk-1225-Sq.ft.jpg" class="img-responsive" loading="lazy" alt="" />
-								</div>
-								<div class="tst-author">
-									<h4>3 BHK</h4>
-								</div>
-								<p>52 Lacks onwards. But better we can have a call or whats up at 9555101838 Number to get offers and discount   </p>
-								
-							</div>
-						</div>
-
-						
-
-						
-
-					</div>
-
+					<div class="background">
+						<img id="PriceLst1"  src="images/PriceList1.jpg" width="100%" style="filter:blur(10px);"></img>	
+						<img id="PriceLst2" src="images/PriceList2.jpg" width="100%" style="filter:blur(10px);" ></img>
+                    </div>
 				</div>
 			</div>
+		</div>
 	</section>
 
 
@@ -994,6 +940,19 @@
 
 					</div>
 				</div>
+                
+				<div class="col-md-4 col-sm-6">
+					<div class="footer-info">
+						<div class="section-title">
+							<h2>Offers</h2>
+						</div>
+						<address>
+							<p><a href="offers/">Offers & Discount</a></p>-->
+						</address>
+
+					</div>
+				</div>
+
 
 				<div class="col-md-4 col-sm-12">
 					<div class="footer-info newsletter-form">
@@ -1023,6 +982,69 @@
      <script src="js/owl.carousel.min.js"></script>
      <script src="js/smoothscroll.js"></script>
      <script src="js/custom.js"></script>
+	 	 <!-- Added by Lalit on 03-10-2021 for image list-->
+	<script>
+		function openModal() {
+		  document.getElementById("MenuBar").style.display="none";
+		  document.getElementById("myModal").style.display = "block";
+		}
+
+		function closeModal() {
+		  document.getElementById("myModal").style.display = "none";
+		  document.getElementById("MenuBar").style.display = "block";
+		}
+
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("demo");
+		  var captionText = document.getElementById("caption");
+		  if (n > slides.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			  slides[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			  dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " active";
+		  captionText.innerHTML = dots[slideIndex-1].alt;
+		}
+		
+	    $(document).ready(function(){
     
+			window.onload = function() {
+		
+		    if(localStorage.getItem("detailsSubmitted")=="true")
+			{
+			   	$("#PriceLst1").removeAttr("style");
+		        $("#PriceLst2").removeAttr("style");
+				//$("#btnViewPriceList").style.display = "none";
+				$("#btnViewPriceList").css({display: "none"});
+                //$("#btnViewPriceList").css({display: "block"});
+				//$("#btnViewPriceList").hide();
+			}
+			else
+			{
+		       setTimeout(function() {
+			   $('.hover_bkgr_fricc').show();
+		       }, 10000);
+			}
+          }
+	   });
+	</script>
+	
 </body>
 </html>

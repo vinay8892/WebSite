@@ -1,0 +1,1 @@
+1-on click of price details button, it should not go to top
