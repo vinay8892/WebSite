@@ -140,14 +140,22 @@
 					date:''
                 },
                 success: function () {
-				      $("#PriceLst1").removeAttr("style");
-		              $("#PriceLst2").removeAttr("style");
+				      $("#PriceLstPhaseII_1").removeAttr("style");
+		              $("#PriceLstPhaseII_2").removeAttr("style");
+					  $("#PriceLstPhaseIII_1").removeAttr("style");
+		              $("#PriceLstPhaseIII_2").removeAttr("style");
+					  $("#PriceLstPhaseIV_1").removeAttr("style");
+		              $("#PriceLstPhaseIV_2").removeAttr("style");
 					  localStorage.setItem("detailsSubmitted", "true");
                       window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
                 },
                 error: function () {
-				      $("#PriceLst1").removeAttr("style");
-		              $("#PriceLst2").removeAttr("style");
+				      $("#PriceLstPhaseII_1").removeAttr("style");
+		              $("#PriceLstPhaseII_2").removeAttr("style");
+					  $("#PriceLstPhaseIII_1").removeAttr("style");
+		              $("#PriceLstPhaseIII_2").removeAttr("style");
+					  $("#PriceLstPhaseIV_1").removeAttr("style");
+		              $("#PriceLstPhaseIV_2").removeAttr("style");
 					  localStorage.setItem("detailsSubmitted", "true");
                       window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
                 }
@@ -856,8 +864,19 @@
 							<a class="section-btn btn btn-default smoothScroll" name="btnViewPriceList" id="btnViewPriceList" style="background-color:blue;display:block;"  href="#">View Price List</a>
 					</div>
 					<div class="background">
-						<img id="PriceLst1"  src="images/PriceList1.jpg" width="100%" style="filter:blur(10px);"></img>	
-						<img id="PriceLst2" src="images/PriceList2.jpg" width="100%" style="filter:blur(10px);" ></img>
+					    <h4>Price List for phase II</h4>
+						<img id="PriceLstPhaseII_1"  src="images/PriceList_PhaseII_1.jpg" width="100%" style="filter:blur(10px);"></img>	
+						<img id="PriceLstPhaseII_2" src="images/PriceList_PhaseII_2.jpg" width="100%" style="filter:blur(10px);" ></img>
+                    </div>
+					<div class="background">
+					    <h4>Price List for phase III</h4>
+						<img id="PriceLstPhaseIII_1"  src="images/PriceList_PhaseIII_1.jpg" width="100%" style="filter:blur(10px);"></img>	
+						<img id="PriceLstPhaseIII_2" src="images/PriceList_PhaseIII_2.jpg" width="100%" style="filter:blur(10px);" ></img>
+                    </div>
+					<div class="background">
+					    <h4>Price List for phase IV</h4>
+						<img id="PriceLstPhaseIV_1"  src="images/PriceList_PhaseIV_1.jpg" width="100%" style="filter:blur(10px);"></img>	
+						<img id="PriceLstPhaseIV_2" src="images/PriceList_PhaseIV_2.jpg" width="100%" style="filter:blur(10px);" ></img>
                     </div>
 				</div>
 			</div>
@@ -936,7 +955,12 @@
 							<p>+91 9555101838</p>
 							<!--<p><a href="privacy-policy/">Privacy Policy</a></p>-->
 						</address>
-
+						<div class="section-title">
+							<h2>Social Media</h2>
+						</div>
+						<address>
+							<p><a href="https://www.facebook.com/NiralaEstateOrg">Connect Us On Facebook</a></p>
+						</address>
 
 					</div>
 				</div>
@@ -1029,8 +1053,12 @@
 		
 		    if(localStorage.getItem("detailsSubmitted")=="true")
 			{
-			   	$("#PriceLst1").removeAttr("style");
-		        $("#PriceLst2").removeAttr("style");
+			   	$("#PriceLstPhaseII_1").removeAttr("style");
+		        $("#PriceLstPhaseII_2").removeAttr("style");
+				$("#PriceLstPhaseIII_1").removeAttr("style");
+		        $("#PriceLstPhaseIII_2").removeAttr("style");
+				$("#PriceLstPhaseIV_1").removeAttr("style");
+		        $("#PriceLstPhaseIV_2").removeAttr("style");
 				//$("#btnViewPriceList").style.display = "none";
 				$("#btnViewPriceList").css({display: "none"});
                 //$("#btnViewPriceList").css({display: "block"});
