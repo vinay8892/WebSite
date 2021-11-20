@@ -39,7 +39,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 	      
 		
 	    $('#POPUPsendMessage').click(function(){
-		    
+		    //$('#POPUPsendMessage').css("display","none");
+			$('#POPUPsendMessage').attr("disabled", true);
+		    $('body').addClass('busy');
             var sPOPUPName=$('#POPUPName').val()
 			var sPOPUPMobile=$('#POPUPMobile').val()
 			var sPOPUPEmail='No Email. It was from POP UP'
@@ -55,11 +57,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
                 success: function () {
                       //window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
 					  localStorage.setItem("detailsSubmitted", "true");
+					  $('body').removeClass('busy');
 					  document.location.href='/thanks'
                 },
                 error: function () {
                       //window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
 					  localStorage.setItem("detailsSubmitted", "true");
+					  $('body').removeClass('busy');
 					  document.location.href='/thanks'
                 }
 				
@@ -98,6 +102,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 	 
 </head>
 <body class="w3-light-grey">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
 	<!-- MENU -->
 	<section class="navbar custom-navbar navbar-fixed-top" id="MenuBar" role="navigation">
 		<div class="container">
@@ -147,13 +161,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
             <label><i class="fa fa-user"></i> Full Name</label>
             <input class="w3-input w3-border" type="text"  placeholder="Enter full name" name="POPUPName" id="POPUPName" required="Please enter your full Name" >
           </div>
+		  <div>
+			<span class="spinner spinner-border spinner-border-sm mr-3" id="spinner" role="status" aria-hidden="true"></span>
+		  </div>
           <div class="w3-full">
             <label><i class="fa fa-phone"></i> Contact Number</label>
           <input class="w3-input w3-border" type="text"  placeholder="Enter mobile number" name="POPUPMobile" id="POPUPMobile" required="Please enter your mobile number">
           </div>
         </div>
+
 		<a  class="section-btn btn btn-default smoothScroll" name="POPUPsendMessage" id="POPUPsendMessage" style="background-color:blue;font-size:28px;font-weight:bold"  href="#">Submit</a>
-      </form>
+	 </form>
     </div>
   </div>
 </header>
