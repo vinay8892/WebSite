@@ -1277,4 +1277,9 @@ img.hover-shadow {
 	filter: blur(3px); 
 } 
 
+#spinner { display:none; } 
+body.busy .spinner { display:block !important; }
+
+
+
   
