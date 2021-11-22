@@ -37,69 +37,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 <script type="text/javascript">
 	 $(document).ready(function(){
 	      
-		$('body').removeClass('busy');
-	    $('#POPUPsendMessage').click(function(){
-		    //$('#POPUPsendMessage').css("display","none");
-			$('#POPUPsendMessage').attr("disabled", true);
-		    $('body').addClass('busy');
-            var sPOPUPName=$('#POPUPName').val()
-			var sPOPUPMobile=$('#POPUPMobile').val()
-			var sPOPUPEmail='No Email. It was from POP UP'
-            $.ajax({
-                url: 'https://tgroz9ryhi.execute-api.ap-south-1.amazonaws.com/Prod/api/Leads',
-                method: 'POST',
-                data: {
-                    name: sPOPUPName ,
-                    mobile: sPOPUPMobile,
-                    email: sPOPUPEmail,
-					date:''
-                },
-                success: function () {
-                      //window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
-					  localStorage.setItem("detailsSubmitted", "true");
-					  $('body').removeClass('busy');
-					  document.location.href='/thanks'
-                },
-                error: function () {
-                      //window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
-					  localStorage.setItem("detailsSubmitted", "true");
-					  $('body').removeClass('busy');
-					  document.location.href='/thanks'
-                }
-				
-            });
-			
-	    });
-		
-		
-		$('#SubscribeForNewsLetter').click(function(){
-		  
-            var snewsLetterEmail=$('#newsLetterEmail').val()
-			
-            $.ajax({
-                url: 'https://tgroz9ryhi.execute-api.ap-south-1.amazonaws.com/Prod/api/NewsLetter',
-                method: 'POST',
-                data: {
-                    email: snewsLetterEmail 
-                },
-                success: function () {
-                    
-                      window.alert('Congratulations. Now you are subscribed to our monthly news letter');
-                },
-                error: function () {
-
-                   window.alert('Congratulations. Now you are subscribed to our monthly news letter');
-                }
-
-            });
-	      });
-
-
+		document.location.href='/'
 		  
 	 });
 	 
 </script>
-	 
 </head>
 <body class="w3-light-grey">
 
@@ -146,103 +88,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 		</div>
 	</section>
 <!-- Navigation Bar -->
-
-<!-- Header -->
-<header class="w3-display-container w3-content" style="max-width:1500px;">
-  <img class="w3-image" src="images/Banner.jpg" alt="Nirala Estate" style="width:100%;height:600px" >
-  <div class="w3-display-right w3-padding w3-col 16 m4">
-    <div class="w3-container w3-red">
-      <h2><i class="fa w3-margin-right"></i>Form to avail discount</h2>
-    </div>
-    <div class="w3-container w3-white w3-padding-16">
-      <form  target="_blank">
-        <div class="w3-row-padding" style="margin:8px -16px;">
-          <div class="w3-full w3-margin-bottom">
-            <label><i class="fa fa-user"></i> Full Name</label>
-            <input class="w3-input w3-border" type="text"  placeholder="Enter full name" name="POPUPName" id="POPUPName" required="Please enter your full Name" >
-          </div>
-		  <div>
-			<span class="spinner spinner-border spinner-border-sm mr-3" id="spinner" role="status" aria-hidden="true"></span>
-		  </div>
-          <div class="w3-full">
-            <label><i class="fa fa-phone"></i> Contact Number</label>
-          <input class="w3-input w3-border" type="text"  placeholder="Enter mobile number" name="POPUPMobile" id="POPUPMobile" required="Please enter your mobile number">
-          </div>
-        </div>
-
-		<a  class="section-btn btn btn-default smoothScroll" name="POPUPsendMessage" id="POPUPsendMessage" style="background-color:blue;font-size:28px;font-weight:bold"  href="#">Submit</a>
-	 </form>
-    </div>
-  </div>
-</header>
-
-
-
-
-	<!-- FOOTER -->
-	<footer id="footer">
-		<div class="container">
-			<div class="row">
-
-				
-
-				<div class="col-md-4 col-sm-6">
-					<div class="footer-info">
-						<div class="section-title">
-							<h2>Contact Info</h2>
-						</div>
-						<address>
-							<p>+91 9555101838</p>
-							<!--<p><a href="privacy-policy/">Privacy Policy</a></p>-->
-						</address>
-                        <div class="section-title">
-							<h2>Social Media</h2>
-						</div>
-						<address>
-							<p><a href="https://www.facebook.com/NiralaEstateOrg">Connect Us On Facebook</a></p>
-						</address>
-
-					</div>
-				</div>
-
-				<div class="col-md-4 col-sm-6">
-					<div class="footer-info">
-						<div class="section-title">
-							<h2>Offers</h2>
-						</div>
-						<address>
-							<p><a href="/offers/">Offers & Discount</a></p>-->
-						</address>
-						<div class="section-title">
-							<h2>Privacy Policy</h2>
-						</div>
-						<address>
-							<p><a href="/privacy-policy/">View Policy document</a></p>
-						</address>
-
-					</div>
-				</div>
-
-				<div class="col-md-4 col-sm-12">
-					<div class="footer-info newsletter-form">
-						<div class="section-title">
-							<h2>Newsletter Signup</h2>
-						</div>
-						<div>
-							<div class="form-group">
-								<form action="#" method="get">
-									<input type="email" class="form-control" placeholder="Enter your email" name="newsLetterEmail" id="newsLetterEmail" required="">
-									<a  class="section-btn btn btn-default smoothScroll" name="SubscribeForNewsLetter" id="SubscribeForNewsLetter"  href="#">Send me</a>
-								</form>
-								<span><sup>*</sup> Please note - we do not spam your email.</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</footer>
 
  <script src="../js/bootstrap.min.js"></script>
  <script src="../js/owl.carousel.min.js"></script>
