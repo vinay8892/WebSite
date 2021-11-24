@@ -43,6 +43,37 @@
 	<!-- Global site tag (gtag.js) - Google Analytics End-->
 	 <script src="js/jquery.js"></script>
 	 <script type="text/javascript">
+	 
+	   document.addEventListener("DOMContentLoaded", function() {
+  var lazyloadImages = document.querySelectorAll("img.lazy");    
+  var lazyloadThrottleTimeout;
+  
+  function lazyload () {
+    if(lazyloadThrottleTimeout) {
+      clearTimeout(lazyloadThrottleTimeout);
+    }    
+    
+    lazyloadThrottleTimeout = setTimeout(function() {
+        var scrollTop = window.pageYOffset;
+        lazyloadImages.forEach(function(img) {
+            if(img.offsetTop < (window.innerHeight + scrollTop)) {
+              img.src = img.dataset.src;
+              img.classList.remove('lazy');
+            }
+        });
+        if(lazyloadImages.length == 0) { 
+          document.removeEventListener("scroll", lazyload);
+          window.removeEventListener("resize", lazyload);
+          window.removeEventListener("orientationChange", lazyload);
+        }
+    }, 20);
+  }
+  
+  document.addEventListener("scroll", lazyload);
+  window.addEventListener("resize", lazyload);
+  window.addEventListener("orientationChange", lazyload);
+});	
+	 
 	 $(document).ready(function(){
 	      $('#AvailtheoffersNow').click(function(){
 		  
@@ -506,7 +537,7 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="team-thumb">
 						<div class="team-image">
-							<img src="images/parkView1.jpg" class="img-responsive" alt="Nirala Estate" loading="lazy" />
+							<img data-src="images/parkView1.jpg" class="img-responsive lazy" alt="Nirala Estate"  />
 						</div>
 						<div class="team-info">
 							<h3>Park View</h3>
@@ -517,7 +548,7 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="team-thumb">
 						<div class="team-image">
-							<img src="images/parkView2.jpg" class="img-responsive" alt="Nirala Estate" loading="lazy" />
+							<img data-src="images/parkView2.jpg" class="img-responsive lazy" alt="Nirala Estate"  />
 						</div>
 						<div class="team-info">
 							<h3>Park view</h3>
@@ -529,7 +560,7 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="team-thumb">
 						<div class="team-image">
-							<img src="images/FrontView1.jpg" class="img-responsive" alt="Nirala Estate" loading="lazy" />
+							<img data-src="images/FrontView1.jpg" class="img-responsive lazy" alt="Nirala Estate"  />
 						</div>
 						<div class="team-info">
 							<h3>Front View</h3>
@@ -540,7 +571,7 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="team-thumb">
 						<div class="team-image">
-							<img src="images/FrontView2.jpg" class="img-responsive" alt="Nirala Estate" loading="lazy" />
+							<img data-src="images/FrontView2.jpg" class="img-responsive lazy" alt="Nirala Estate"  />
 						</div>
 						<div class="team-info">
 							<h3>Front View</h3>
@@ -582,7 +613,7 @@
 								<div class="courses-thumb">
 									<div class="courses-top">
 										<div class="courses-image">
-											<img src="images/2bhk-995-Sq.ft.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow cursor" alt="Nirala Estate" loading="lazy"/>
+											<img data-src="images/2bhk-995-Sq.ft.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow cursor lazy" alt="Nirala Estate" />
 										</div>
 
 									</div>
@@ -602,7 +633,7 @@
 								<div class="courses-thumb">
 									<div class="courses-top">
 										<div class="courses-image">
-											<img src="images/3bhk-1225-Sq.ft.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow cursor" alt="Nirala Estate" loading="lazy" />
+											<img data-src="images/3bhk-1225-Sq.ft.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow cursor lazy" alt="Nirala Estate"  />
 										</div>
 
 									</div>
@@ -623,7 +654,7 @@
 								<div class="courses-thumb">
 									<div class="courses-top">
 										<div class="courses-image">
-											<img src="images/3bhk-1250-Sq.ft.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow cursor" alt="Nirala Estate" loading="lazy" />
+											<img data-src="images/3bhk-1250-Sq.ft.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow cursor lazy" alt="Nirala Estate" />
 										</div>
 
 									</div>
@@ -645,7 +676,7 @@
 								<div class="courses-thumb">
 									<div class="courses-top">
 										<div class="courses-image">
-											<img src="images/3bhk-1270-sq.ft.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow cursor" class="img-responsive" alt="Nirala Estate" loading="lazy" />
+											<img data-src="images/3bhk-1270-sq.ft.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow cursor lazy" class="img-responsive" alt="Nirala Estate"  />
 										</div>
 
 									</div>
@@ -665,7 +696,7 @@
 								<div class="courses-thumb">
 									<div class="courses-top">
 										<div class="courses-image">
-											<img src="images/3bhk-1385-sq.ft.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow cursor" alt="Nirala Estate" loading="lazy"/>
+											<img data-src="images/3bhk-1385-sq.ft.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow cursor lazy" alt="Nirala Estate" />
 										</div>
 									</div>
 
@@ -685,7 +716,7 @@
 								<div class="courses-thumb">
 									<div class="courses-top">
 										<div class="courses-image">
-											<img src="images/3bhk-1535-sq.ft.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow cursor" alt="Nirala Estate" loading="lazy"/>
+											<img data-src="images/3bhk-1535-sq.ft.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow cursor lazy" alt="Nirala Estate" />
 										</div>
 
 									</div>
@@ -705,7 +736,7 @@
 								<div class="courses-thumb">
 									<div class="courses-top">
 										<div class="courses-image">
-											<img src="images/3bhk-1645-sq.ft.jpg" onclick="openModal();currentSlide(7)" class="hover-shadow cursor" alt="Nirala Estate" loading="lazy" />
+											<img data-src="images/3bhk-1645-sq.ft.jpg" onclick="openModal();currentSlide(7)" class="hover-shadow cursor lazy" alt="Nirala Estate"  />
 										</div>
 
 									</div>
@@ -725,7 +756,7 @@
 								<div class="courses-thumb">
 									<div class="courses-top">
 										<div class="courses-image">
-											<img src="images/3bhk-1897-sq.ft.jpg" onclick="openModal();currentSlide(8)" class="hover-shadow cursor" alt="Nirala Estate" loading="lazy" />
+											<img  data-src="images/3bhk-1897-sq.ft.jpg" onclick="openModal();currentSlide(8)" class="hover-shadow cursor lazy" alt="Nirala Estate"  />
 										</div>
 
 									</div>
@@ -753,42 +784,42 @@
 
 			<div class="mySlides">
 			  <div class="numbertext">1 / 8</div>
-			  <img src="images/2bhk-995-Sq.ft.jpg" alt="Nirala Estate" loading="lazy" style="width:100%">
+			  <img data-src="images/2bhk-995-Sq.ft.jpg" alt="Nirala Estate" class="lazy"  style="width:100%">
 			</div>
 
 			<div class="mySlides">
 			  <div class="numbertext">2 / 8</div>
-			  <img src="images/3bhk-1225-Sq.ft.jpg" alt="Nirala Estate" loading="lazy" style="width:100%">
+			  <img data-src="images/3bhk-1225-Sq.ft.jpg" alt="Nirala Estate" class="lazy" style="width:100%">
 			</div>
 
 			<div class="mySlides">
 			  <div class="numbertext">3 / 8</div>
-			  <img src="images/3bhk-1250-Sq.ft.jpg" alt="Nirala Estate" loading="lazy" style="width:100%">
+			  <img data-src="images/3bhk-1250-Sq.ft.jpg" alt="Nirala Estate" class="lazy" style="width:100%">
 			</div>
 			
 			<div class="mySlides">
 			  <div class="numbertext">4 / 8</div>
-			  <img src="images/3bhk-1270-sq.ft.jpg" alt="Nirala Estate" loading="lazy" style="width:100%">
+			  <img data-src="images/3bhk-1270-sq.ft.jpg" alt="Nirala Estate" class="lazy" style="width:100%">
 			</div>
 			
 			<div class="mySlides">
 			  <div class="numbertext">5 / 8</div>
-			  <img src="images/3bhk-1385-sq.ft.jpg" alt="Nirala Estate" loading="lazy" style="width:100%">
+			  <img data-src="images/3bhk-1385-sq.ft.jpg" alt="Nirala Estate" class="lazy" style="width:100%">
 			</div>
 			
 			<div class="mySlides">
 			  <div class="numbertext">6 / 8</div>
-			  <img src="images/3bhk-1535-sq.ft.jpg" alt="Nirala Estate" loading="lazy" style="width:100%">
+			  <img data-src="images/3bhk-1535-sq.ft.jpg" alt="Nirala Estate" class="lazy" style="width:100%">
 			</div>
 			
 			<div class="mySlides">
 			  <div class="numbertext">7 / 8</div>
-			  <img src="images/3bhk-1645-sq.ft.jpg" alt="Nirala Estate" loading="lazy" style="width:100%">
+			  <img data-src="images/3bhk-1645-sq.ft.jpg" alt="Nirala Estate" class="lazy" style="width:100%">
 			</div>
 			
 			<div class="mySlides">
 			  <div class="numbertext">8 / 8</div>
-			  <img src="images/3bhk-1897-sq.ft.jpg" alt="Nirala Estate" loading="lazy" style="width:100%">
+			  <img data-src="images/3bhk-1897-sq.ft.jpg" alt="Nirala Estate" class="lazy" style="width:100%">
 			</div>
 			
 			
@@ -801,28 +832,28 @@
 
 
 			<div class="column">
-			  <img class="demo cursor" src="images/2bhk-995-Sq.ft.jpg" style="width:100%" loading="lazy" onclick="currentSlide(1)" alt="2 BHK 995 Sq.ft.">
+			  <img class="demo cursor lazy" data-src="images/2bhk-995-Sq.ft.jpg" style="width:100%"  onclick="currentSlide(1)" alt="2 BHK 995 Sq.ft.">
 			</div>
 			<div class="column">
-			  <img class="demo cursor" src="images/3bhk-1225-Sq.ft.jpg" style="width:100%" loading="lazy" onclick="currentSlide(2)" alt="3 BHK-1225 Sq.ft.">
+			  <img class="demo cursor lazy" data-src="images/3bhk-1225-Sq.ft.jpg" style="width:100%"  onclick="currentSlide(2)" alt="3 BHK-1225 Sq.ft.">
 			</div>
 			<div class="column">
-			  <img class="demo cursor" src="images/3bhk-1250-Sq.ft.jpg" style="width:100%" loading="lazy" onclick="currentSlide(3)" alt="3 BHK 1250 Sq.ft.">
+			  <img class="demo cursor lazy" data-src="images/3bhk-1250-Sq.ft.jpg" style="width:100%"  onclick="currentSlide(3)" alt="3 BHK 1250 Sq.ft.">
 			</div>
 			<div class="column">
-			  <img class="demo cursor" src="images/3bhk-1270-sq.ft.jpg" style="width:100%" loading="lazy" onclick="currentSlide(4)" alt="3 BHK 1270 sq.ft.">
+			  <img class="demo cursor lazy" data-src="images/3bhk-1270-sq.ft.jpg" style="width:100%"  onclick="currentSlide(4)" alt="3 BHK 1270 sq.ft.">
 			</div>
 			<div class="column">
-			  <img class="demo cursor" src="images/3bhk-1385-sq.ft.jpg" style="width:100%" loading="lazy" onclick="currentSlide(5)" alt="3 BHK 1385 sq.ft.">
+			  <img class="demo cursor lazy" data-src="images/3bhk-1385-sq.ft.jpg" style="width:100%"  onclick="currentSlide(5)" alt="3 BHK 1385 sq.ft.">
 			</div>
 			<div class="column">
-			  <img class="demo cursor" src="images/3bhk-1535-sq.ft.jpg" style="width:100%" loading="lazy" onclick="currentSlide(6)" alt="3 BHK 1535 sq.ft.">
+			  <img class="demo cursor lazy" data-src="images/3bhk-1535-sq.ft.jpg" style="width:100%"  onclick="currentSlide(6)" alt="3 BHK 1535 sq.ft.">
 			</div>
 			<div class="column">
-			  <img class="demo cursor" src="images/3bhk-1645-sq.ft.jpg" style="width:100%" loading="lazy" onclick="currentSlide(7)" alt="3 BHK 1645 sq.ft.">
+			  <img class="demo cursor lazy" data-src="images/3bhk-1645-sq.ft.jpg" style="width:100%"  onclick="currentSlide(7)" alt="3 BHK 1645 sq.ft.">
 			</div>
 			<div class="column">
-			  <img class="demo cursor" src="images/3bhk-1897-sq.ft.jpg" style="width:100%" loading="lazy" onclick="currentSlide(8)" alt="3 BHK 1897 sq.ft.">
+			  <img class="demo cursor lazy" data-src="images/3bhk-1897-sq.ft.jpg" style="width:100%"  onclick="currentSlide(8)" alt="3 BHK 1897 sq.ft.">
 			</div>
 		  </div>
 		</div>
@@ -842,18 +873,18 @@
 					</div>
 					<div class="background">
 					    <h4>Price List for phase II</h4>
-						<img id="PriceLstPhaseII_1"  src="images/PriceList_PhaseII_1.jpg" alt="Nirala Estate" width="100%" loading="lazy" style="filter:blur(10px);"></img>	
-						<img id="PriceLstPhaseII_2" src="images/PriceList_PhaseII_2.jpg" alt="Nirala Estate" width="100%" loading="lazy" style="filter:blur(10px);" ></img>
+						<img id="PriceLstPhaseII_1"  data-src="images/PriceList_PhaseII_1.jpg" alt="Nirala Estate" width="100%" class="lazy" style="filter:blur(10px);"></img>	
+						<img id="PriceLstPhaseII_2" data-src="images/PriceList_PhaseII_2.jpg" alt="Nirala Estate" width="100%" class="lazy" style="filter:blur(10px);" ></img>
                     </div>
 					<div class="background">
 					    <h4>Price List for phase III</h4>
-						<img id="PriceLstPhaseIII_1"  src="images/PriceList_PhaseIII_1.jpg" alt="Nirala Estate" width="100%" loading="lazy" style="filter:blur(10px);"></img>	
-						<img id="PriceLstPhaseIII_2" src="images/PriceList_PhaseIII_2.jpg" alt="Nirala Estate" width="100%" loading="lazy" style="filter:blur(10px);" ></img>
+						<img id="PriceLstPhaseIII_1"  data-src="images/PriceList_PhaseIII_1.jpg" alt="Nirala Estate" width="100%" class="lazy" style="filter:blur(10px);"></img>	
+						<img id="PriceLstPhaseIII_2" data-src="images/PriceList_PhaseIII_2.jpg" alt="Nirala Estate" width="100%" class="lazy" style="filter:blur(10px);" ></img>
                     </div>
 					<div class="background">
 					    <h4>Price List for phase IV</h4>
-						<img id="PriceLstPhaseIV_1"  src="images/PriceList_PhaseIV_1.jpg" alt="Nirala Estate" width="100%" loading="lazy" style="filter:blur(10px);"></img>	
-						<img id="PriceLstPhaseIV_2" src="images/PriceList_PhaseIV_2.jpg" alt="Nirala Estate" width="100%" loading="lazy" style="filter:blur(10px);" ></img>
+						<img id="PriceLstPhaseIV_1"  data-src="images/PriceList_PhaseIV_1.jpg" alt="Nirala Estate" width="100%" class="lazy" style="filter:blur(10px);"></img>	
+						<img id="PriceLstPhaseIV_2" data-src="images/PriceList_PhaseIV_2.jpg" alt="Nirala Estate" width="100%" class="lazy" style="filter:blur(10px);" ></img>
                     </div>
 				</div>
 			</div>
@@ -889,7 +920,7 @@
 
 				<div class="col-md-6 col-sm-12">
 					<div class="contact-image">
-						<img src="images/contact-image.jpg" class="img-responsive" alt="Smiling Two Girls" loading="lazy" />
+						<img data-src="images/contact-image.jpg" class="img-responsive lazy" alt="Smiling Two Girls"  />
 					</div>
 				</div>
 
