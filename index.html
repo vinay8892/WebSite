@@ -42,6 +42,7 @@
 	</script>
 	<!-- Global site tag (gtag.js) - Google Analytics End-->
 	 <script src="js/jquery.js"></script>
+	 
 	 <script type="text/javascript">
 	 
 	   document.addEventListener("DOMContentLoaded", function() {
@@ -96,6 +97,10 @@
 
 	 
 	 $(document).ready(function(){
+	 
+	 
+	      $('body').removeClass('busy');
+		  //localStorage.removeItem("detailsSubmitted");
 	      $('#AvailtheoffersNow').click(function(){
 		  
             var sname=$('#name').val()
@@ -177,11 +182,6 @@
 	      });
 		  
 
-	    /*
-        $('.hover_bkgr_fricc').click(function(){
-          $('.hover_bkgr_fricc').hide();
-        });
-	    */
         $('.popupCloseButton').click(function(){
           $('.hover_bkgr_fricc').hide();
         });
@@ -192,7 +192,8 @@
             var sPOPUPName=$('#POPUPName').val()
 			var sPOPUPMobile=$('#POPUPMobile').val()
 			var sPOPUPEmail='No Email. It was from POP UP'
-			$('.hover_bkgr_fricc').hide();
+			$('#POPUPsendMessage').attr("disabled", true);
+		    $('body').addClass('busy');
             $.ajax({
                 url: 'https://tgroz9ryhi.execute-api.ap-south-1.amazonaws.com/Prod/api/Leads',
                 method: 'POST',
@@ -209,7 +210,9 @@
 		              $("#PriceLstPhaseIII_2").removeAttr("style");
 					  $("#PriceLstPhaseIV_1").removeAttr("style");
 		              $("#PriceLstPhaseIV_2").removeAttr("style");
+					  $('body').removeClass('busy');
 					  localStorage.setItem("detailsSubmitted", "true");
+					  $('.hover_bkgr_fricc').hide();
                       window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
                 },
                 error: function () {
@@ -219,7 +222,9 @@
 		              $("#PriceLstPhaseIII_2").removeAttr("style");
 					  $("#PriceLstPhaseIV_1").removeAttr("style");
 		              $("#PriceLstPhaseIV_2").removeAttr("style");
+					  $('body').removeClass('busy');
 					  localStorage.setItem("detailsSubmitted", "true");
+					  $('.hover_bkgr_fricc').hide();
                       window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
                 }
 
@@ -378,18 +383,65 @@
 						<p>
 							Water Cascade, Bamboo Court, Podium Plaza, Entrance Water Features With Portals, Reflexology Path, Palm Gardens, Central Green, Children Play Area, Tensile Canopies, Sculpture Garden, Badminton Courts, Outdoor Gym, Swimming Pool, Kids Pool, Club, Jacuzzi, Rain Dance Area, Yoga/Meditation Garden, Open Air Theater (O.A.T.)
 						</p>
+						<h2>Project Main Points</h2>
+						<p>
+						✅Great Opportunity to buy 2/3 BHK flats in this festive season at great offers and discounts in Noida Extension at affordable rate starting @ 45.77 lacs
+						</p>
+						
+						<p>
+						✅ Fully RCC structure - Earthquake Resistant
+						</p>					
+
+                        <p>
+						✅Only 4 Apartment on Each Floor
+						</p>
+						
+						<p>
+						✅Resort Style Living Residential
+						</p>
+
+						<p>
+						✅25 Acre Project with Spacious Balconies. 12+ World-Class Amenities & Green Spaces, Covered Car Parking, Club Membership etc.
+						</p>
+						
+						<p>
+						✅Best Security in The Area
+						</p>
+						
+						<p>
+						✅On 110 Meter, there is main road which is directly connecting to Metro Network, FNG Corridor, Noida Expressway
+						</p>
+
+						<p>
+						✅Metro Station Planned on Gaur Chowk just 1Km Away From Society
+						</p>
+						
+						<p>
+						✅All necessary amenities ( i.e. Kids schools, Good Colleges, Shopping malls, multi speciality hospital, Big Multi National Companies, metro station etc.,) available from 2 to 10 KM 
+						</p>
+						
+						<p>
+						✅largest mall of Noida extension ( Bhutani Grandthum, spread over 25 Acre) is adjacent to Nirala Estate.
+						</p>
+
+
+
 
 					</div>
 				</div>
-
+				
+                
+				
 				<div class="col-md-offset-1 col-md-4 col-sm-12">
 					<div class="about-info">
+					    
+						
 						<h2>Project Highlights</h2>
 
 						<figure>
 							<span><i class="fa fa-certificate"></i></span>
 							<figcaption>
-								<h3>Flooring</h3>
+								<h4>Flooring</h4>
 								<p>
 									. Vitrified tiles 2'*2' in Drawing Room, Kitchen,
 									Study Room, and all Bedrooms.
@@ -403,7 +455,7 @@
 						<figure>
 							<span><i class="fa fa-certificate"></i></span>
 							<figcaption>
-								<h3>Wall & Ceiling Finish</h3>
+								<h4>Wall & Ceiling Finish</h4>
 								<p>
 									• Finished walls & ceiling with putty and Plastic
 									Paint in pleasing shades.
@@ -414,7 +466,7 @@
 						<figure>
 							<span><i class="fa fa-certificate"></i></span>
 							<figcaption>
-								<h3>Kitchen</h3>
+								<h4>Kitchen</h4>
 								<p>
 									. Granite working top & stainless steel sink single
 									bowl with drain board.
@@ -429,9 +481,9 @@
 						<figure>
 							<span><i class="fa fa-certificate"></i></span>
 							<figcaption>
-								<h3>
+								<h4>
 									Power Backup
-								</h3>
+								</h4>
 								<p>
 									. 100% DG power back-up for all common areas.
 
@@ -447,7 +499,7 @@
 						<figure>
 							<span><i class="fa fa-certificate"></i></span>
 							<figcaption>
-								<h3>Security System</h3>
+								<h4>Security System</h4>
 
 								<p>
 									. Secured gated community.
@@ -464,7 +516,7 @@
 						<figure>
 							<span><i class="fa fa-certificate"></i></span>
 							<figcaption>
-								<h3>Toilets</h3>
+								<h4>Toilets</h4>
 								<p>
 									. Ceramic tiles on walls upto door level.
 								</p>
@@ -481,7 +533,7 @@
 						<figure>
 							<span><i class="fa fa-certificate"></i></span>
 							<figcaption>
-								<h3>Doors & Windows </h3>
+								<h4>Doors & Windows </h4>
 								<p>
 									• External doors & windows – Composite
 									Metal/UPVC/ aluminium powder coated.
@@ -499,9 +551,9 @@
 						<figure>
 							<span><i class="fa fa-certificate"></i></span>
 							<figcaption>
-								<h3>
+								<h4>
 									Electrical’s
-								</h3>
+								</h4>
 								<p>
 									. Copper wire in PVC conduits with MCB supported
 									circuits
@@ -513,7 +565,7 @@
 						<figure>
 							<span><i class="fa fa-certificate"></i></span>
 							<figcaption>
-								<h3>Lift</h3>
+								<h4>Lift</h4>
 
 								<p>
 									. High speed passenger elevators.
@@ -524,7 +576,7 @@
 						<figure>
 							<span><i class="fa fa-certificate"></i></span>
 							<figcaption>
-								<h3>Lift, Lobby & Staircases</h3>
+								<h4>Lift, Lobby & Staircases</h4>
 
 								<p>
 									. Lift lobby floor and staircase combination of one
@@ -561,7 +613,7 @@
 							<img data-src="images/parkView1.jpg" class="img-responsive lazy" alt="Nirala Estate"  />
 						</div>
 						<div class="team-info">
-							<h3>Park View</h3>
+							<h4>Park View</h4>
 						</div>
 					</div>
 				</div>
@@ -572,7 +624,7 @@
 							<img data-src="images/parkView2.jpg" class="img-responsive lazy" alt="Nirala Estate"  />
 						</div>
 						<div class="team-info">
-							<h3>Park view</h3>
+							<h4>Park view</h4>
 						</div>
 
 					</div>
@@ -584,7 +636,7 @@
 							<img data-src="images/FrontView1.jpg" class="img-responsive lazy" alt="Nirala Estate"  />
 						</div>
 						<div class="team-info">
-							<h3>Front View</h3>
+							<h4>Front View</h4>
 						</div>
 					</div>
 				</div>
@@ -595,7 +647,7 @@
 							<img data-src="images/FrontView2.jpg" class="img-responsive lazy" alt="Nirala Estate"  />
 						</div>
 						<div class="team-info">
-							<h3>Front View</h3>
+							<h4>Front View</h4>
 						</div>
 					</div>
 				</div>
@@ -640,9 +692,9 @@
 									</div>
 
 									<div class="courses-detail">
-										<h3>
+										<h4>
 											2BHK 995 Sqft
-										</h3>
+										</h4>
 									</div>
 
 								</div>
@@ -660,10 +712,10 @@
 									</div>
 
 									<div class="courses-detail">
-										<h3>
+										<h4>
 											3BHK 1225 Sqft
 
-										</h3>
+										</h4>
 									</div>
 
 								</div>
@@ -681,10 +733,10 @@
 									</div>
 
 									<div class="courses-detail">
-										<h3>
+										<h4>
 											3BHK 1250 Sqft
 
-										</h3>
+										</h4>
 									</div>
 
 
@@ -703,9 +755,9 @@
 									</div>
 
 									<div class="courses-detail">
-										<h3>
+										<h4>
 											3BHK 1270 Sqft
-										</h3>
+										</h4>
 									</div>
 
 								</div>
@@ -722,9 +774,9 @@
 									</div>
 
 									<div class="courses-detail">
-										<h3>
+										<h4>
 											3BHK 1385 Sqft
-										</h3>
+										</h4>
 
 									</div>
 
@@ -743,9 +795,9 @@
 									</div>
 
 									<div class="courses-detail">
-										<h3>
+										<h4>
 											3BHK 1535 Sqft
-										</h3>
+										</h4>
 									</div>
 
 								</div>
@@ -763,9 +815,9 @@
 									</div>
 
 									<div class="courses-detail">
-										<h3>
+										<h4>
 											3BHK 1645 Sqft
-										</h3>
+										</h4>
 									</div>
 
 								</div>
@@ -783,9 +835,9 @@
 									</div>
 
 									<div class="courses-detail">
-										<h3>
+										<h4>
 											3BHK 1897 Sqft
-										</h3>
+										</h4>
 									</div>
 
 								</div>
@@ -799,7 +851,7 @@
 			</div>
 	</section>
 	<!--            By Lalit on 2021-10-03  for Image -->
-			<div id="myModal" class="modal">
+		<div id="myModal" class="modal">
 		  <span class="close cursor" onclick="closeModal()">&times;</span>
 		  <div class="modal-content">
 
@@ -877,7 +929,11 @@
 			  <img class="demo cursor lazy" data-src="images/3bhk-1897-sq.ft.jpg" style="width:100%"  onclick="currentSlide(8)" alt="3 BHK 1897 sq.ft.">
 			</div>
 		  </div>
+		  
+
+			
 		</div>
+
 <!--       End     By Lalit on 2021-10-03  for Image --!>
 
 	<!-- TESTIMONIAL -->
@@ -954,11 +1010,13 @@
        <div>
            <div class="popupCloseButton">&times;</div>
 		  
-		   <h3 style="text-align: center; color:blue;font-size:28px;font-weight:bold;margin:0;"><strong>Form to avail discount</strong></h3>
+		   <h4 style="text-align: center; color:blue;font-size:28px;font-weight:bold;margin:0;"><strong>Form to avail discount</strong></h3>
 		   
 		   <label style="float:left"><i class="fa fa-user" style="font-size:28px;color:blue"></i>Full Name</label>
            <input type="text" class="POPTextBoxStyle" placeholder="Enter full name" name="POPUPName" id="POPUPName" required="">
-		   
+		  <div>
+			<span class="spinner spinner-border spinner-border-sm mr-3" id="spinner" role="status" aria-hidden="true"></span>
+		  </div>
 	
 		   </br>
 		   <label style="float:left"><i class="fa fa-phone" style="font-size:28px;color:blue"></i>Contact Number</label>
@@ -987,7 +1045,6 @@
 						</div>
 						<address>
 							<p>+91 9555101838</p>
-							<!--<p><a href="privacy-policy/">Privacy Policy</a></p>-->
 						</address>
 						<div class="section-title">
 							<h2>Social Media</h2>
