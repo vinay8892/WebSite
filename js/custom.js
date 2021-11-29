@@ -41,9 +41,10 @@
       smartSpeed: 1000,
       dots: false,
       nav:true,
+	  margin:10,
       navText: [
-          '<i class="fa fa-angle-left"></i>',
-          '<i class="fa fa-angle-right"></i>'
+          '<i class="fa fa-angle-left">&#10094;</i>',
+          '<i class="fa fa-angle-right">&#10095;</i>'
       ],
       responsiveClass: true,
       responsive: {
