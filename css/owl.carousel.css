@@ -1,11 +1,8 @@
-/**
- * Owl Carousel v2.2.1
- * Copyright 2013-2017 David Deutsch
- * Licensed under  ()
- */
+
 /*
  *  Owl Carousel - Core
  */
+
 .owl-carousel {
   display: none;
   width: 100%;
@@ -168,3 +165,31 @@
   z-index: 1;
   height: 100%;
   width: 100%; }
+  /* some carousel fixes by vinay start*/
+ .owl-carousel .owl-nav .owl-prev
+ {
+    width: 15px;
+    height: 100px;
+    position: absolute;
+    top: 40%;
+    margin-left: -20px;
+    display: block !important;
+    border:0px solid black;
+	background-color: rgba(0, 0, 0, 0.6);
+ }
+ 
+  .owl-carousel .owl-nav .owl-next
+ {
+    width: 15px;
+    height: 100px;
+    position: absolute;
+    top: 40%;
+    right: -25px;
+    display: block !important;
+    border:0px solid black;
+	background-color: rgba(0, 0, 0, 0.6);
+ }
+ 
+.owl-carousel .owl-nav .owl-prev i,.owl-carousel .owl-nav .owl-next i {transform : scale(1,6); color: #ccc;}
+
+/* some carousel fixes by vinay End*/
